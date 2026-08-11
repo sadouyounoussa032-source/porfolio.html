@@ -1,622 +1,528 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Sadou Younoussa — Technicien Réseaux &amp; Télécommunications</title>
-<meta name="description" content="Portfolio de Sadou Younoussa, technicien Réseaux et Télécommunications basé au Niger." />
-<meta name="keywords" content="Sadou Younoussa, Réseaux, Télécommunications, Technicien Réseaux, Niger, Portfolio" />
-<meta name="author" content="Sadou Younoussa" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-<style>
-  /* ============ Tokens ============ */
-  :root{
-    --bg:        #f6f8fc;
-    --panel:     #ffffff;
-    --ink:       #10141f;
-    --muted:     #5b6577;
-    --muted-lt:  #8892a3;
-    --line:      #e6eaf2;
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sadou Younoussa | Technicien Réseaux & Télécommunications</title>
+  <meta name="description" content="Portfolio professionnel de Sadou Younoussa, diplômé en Réseaux et Télécommunications." />
+  <meta name="author" content="Sadou Younoussa" />
 
-    --c1: #00c2ff; /* cyan  */
-    --c2: #7c5cff; /* violet */
-    --c3: #ff5da2; /* magenta */
-    --c4: #ffb020; /* amber */
-    --spectrum: linear-gradient(90deg, var(--c1), var(--c2) 45%, var(--c3) 75%, var(--c4));
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    --radius: 16px;
-    --radius-sm: 10px;
-    --max: 1140px;
-    --display: "Space Grotesk", var(--sans);
-    --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-    --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
-  }
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{
-    margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
-    line-height:1.65;-webkit-font-smoothing:antialiased;
-  }
-  a{color:inherit;text-decoration:none}
-  img{max-width:100%;display:block}
-  ::selection{background:var(--c1);color:#fff}
-  :focus-visible{outline:2px solid var(--c2);outline-offset:3px;border-radius:4px}
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  <style>
+    /* ===== Variables & Design System ===== */
+    :root {
+      --bg: #0f172a;
+      --bg-light: #f8fafc;
+      --card-bg: #ffffff;
+      --card-border: #e2e8f0;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --text-light: #94a3b8;
+      
+      --primary: #0284c7;
+      --primary-hover: #0369a1;
+      --primary-glow: rgba(2, 132, 199, 0.15);
+      --accent: #f97316;
+      --accent-hover: #ea580c;
+      
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --max-width: 1140px;
+      
+      --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+      --shadow-md: 0 10px 30px -10px rgba(15, 23, 42, 0.08);
+      --shadow-lg: 0 20px 40px -15px rgba(15, 23, 42, 0.12);
+      --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-  h1,h2,h3,h4{font-family:var(--display);margin:0;letter-spacing:-0.01em;color:var(--ink)}
+    /* ===== Reset & Base ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; height: 100%; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4, .brand { font-family: 'Plus Jakarta Sans', sans-serif; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
 
-  .eyebrow{
-    display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;
-    color:#fff;background:var(--spectrum);padding:5px 12px;border-radius:999px;margin-bottom:14px;
-    font-weight:500;
-  }
-  .section-title{margin-bottom:36px}
-  .section-title h2{font-size:26px}
-  .section-title .kicker{display:block;color:var(--muted-lt);font-family:var(--mono);font-size:12.5px;margin-top:6px}
+    .wrap { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
 
-  section{padding:84px 0}
-  section.alt{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    /* ===== Navigation ===== */
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; color: #fff; font-size: 1.1rem; }
+    .logo {
+      width: 40px; height: 40px; border-radius: var(--radius-sm);
+      background: linear-gradient(135deg, #38bdf8, #0284c7);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-weight: 800; font-size: 1rem;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+    }
+    nav ul { list-style: none; display: flex; gap: 8px; align-items: center; }
+    nav a {
+      color: #cbd5e1; font-weight: 500; font-size: 0.9rem;
+      padding: 8px 12px; border-radius: var(--radius-sm);
+      transition: var(--transition);
+    }
+    nav a:hover { color: #fff; background: rgba(255, 255, 255, 0.08); }
+    .nav-toggle { display: none; background: transparent; border: 0; color: #fff; font-size: 24px; cursor: pointer; }
 
-  [data-reveal]{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
-  [data-reveal].visible{opacity:1;transform:none}
+    /* ===== Hero Section ===== */
+    .hero {
+      position: relative; min-height: 90vh; display: flex; align-items: center; justify-content: center;
+      padding: 140px 24px 80px; background: var(--bg);
+      background-image: 
+        radial-gradient(circle at 15% 20%, rgba(2, 132, 199, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(249, 115, 22, 0.1) 0%, transparent 40%);
+      color: #fff; text-align: center; overflow: hidden;
+    }
+    .hero-inner { max-width: 840px; position: relative; z-index: 2; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 16px; border-radius: 999px;
+      background: rgba(2, 132, 199, 0.15); border: 1px solid rgba(56, 189, 248, 0.3);
+      color: #38bdf8; font-size: 0.85rem; font-weight: 600; margin-bottom: 24px;
+    }
+    .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 12px; }
+    .hero h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); color: #38bdf8; font-weight: 600; margin-bottom: 20px; }
+    .hero p { color: #94a3b8; font-size: 1.1rem; max-width: 680px; margin: 0 auto 28px; font-weight: 400; }
+    .hero-contacts { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; align-items: center; font-size: 0.95rem; color: #e2e8f0; margin-bottom: 36px; }
+    .hero-contacts a { color: #e2e8f0; transition: var(--transition); }
+    .hero-contacts a:hover { color: #38bdf8; }
 
-  /* ============ Header ============ */
-  header{
-    position:fixed;inset:0 0 auto 0;z-index:1200;
-    background:rgba(246,248,252,0.82);backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line);
-  }
-  .nav{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px}
-  .brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;font-size:16px}
-  .brand .mark{width:30px;height:30px;border-radius:9px;background:var(--spectrum);display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700}
-  nav#main-nav{list-style:none;display:flex;gap:2px;margin:0;padding:0;align-items:center}
-  nav#main-nav a{
-    color:var(--muted);font-weight:600;font-size:13px;padding:9px 12px;border-radius:999px;transition:color .15s ease,background .15s ease;
-  }
-  nav#main-nav a:hover{color:var(--ink);background:var(--line)}
-  .nav-toggle{display:none;background:var(--panel);border:1px solid var(--line);color:var(--ink);width:38px;height:38px;border-radius:var(--radius-sm)}
+    .hero-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px; padding: 12px 26px;
+      border-radius: 999px; font-weight: 600; font-size: 0.95rem;
+      border: 0; cursor: pointer; transition: var(--transition); text-decoration: none;
+    }
+    .btn-primary { background: var(--primary); color: #fff; box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4); }
+    .btn-primary:hover { background: var(--primary-hover); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(2, 132, 199, 0.5); }
+    .btn-outline { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2); color: #fff; }
+    .btn-outline:hover { background: rgba(255,255,255,0.12); transform: translateY(-2px); }
+    .btn-download { background: var(--accent); color: #fff; box-shadow: 0 4px 14px rgba(249, 115, 22, 0.3); }
+    .btn-download:hover { background: var(--accent-hover); transform: translateY(-2px); }
 
-  /* ============ Buttons ============ */
-  .btn{
-    display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;
-    font-weight:600;font-size:14px;border:1px solid transparent;cursor:pointer;
-    transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease;
-  }
-  .btn-primary{background:var(--ink);color:#fff}
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(16,20,31,0.22)}
-  .btn-spectrum{background:var(--spectrum);color:#fff}
-  .btn-spectrum:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(124,92,255,0.28)}
-  .btn-outline{border-color:var(--line);color:var(--ink);background:#fff}
-  .btn-outline:hover{border-color:var(--c2);color:var(--c2)}
+    /* ===== Sections ===== */
+    section { padding: 90px 0; opacity: 0; transform: translateY(24px); transition: all 0.6s ease-out; }
+    section.visible { opacity: 1; transform: none; }
+    .section-title { text-align: center; margin-bottom: 48px; }
+    .section-title h2 { font-size: 2.1rem; font-weight: 700; color: var(--text-main); letter-spacing: -0.02em; margin-bottom: 8px; }
+    .section-title p { color: var(--text-muted); font-size: 1rem; }
 
-  /* ============ Hero ============ */
-  .hero{min-height:96vh;display:flex;align-items:center;padding:150px 0 70px;position:relative;overflow:hidden}
-  .hero::before{
-    content:"";position:absolute;top:-200px;right:-160px;width:520px;height:520px;border-radius:50%;
-    background:radial-gradient(circle, rgba(124,92,255,0.16), rgba(0,194,255,0.08) 55%, transparent 70%);
-    filter:blur(10px);
-  }
-  .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;position:relative}
-  .hero-status{
-    display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;color:var(--c2);
-    border:1px solid var(--line);background:#fff;padding:7px 14px;border-radius:999px;margin-bottom:22px;
-  }
-  .hero-status .dot{width:6px;height:6px;border-radius:50%;background:var(--c1);animation:pulse 2s infinite}
-  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.5)}}
-  .hero h1{font-size:50px;line-height:1.08}
-  .hero h1 .accent{
-    background:var(--spectrum);-webkit-background-clip:text;background-clip:text;color:transparent;
-  }
-  .hero .role{font-size:19px;color:var(--muted);margin:16px 0 18px;font-weight:600;font-family:var(--display)}
-  .hero p.lead{max-width:500px;color:var(--muted);font-size:15.5px}
-  .hero-contacts{display:flex;flex-wrap:wrap;gap:18px;margin:24px 0;font-family:var(--mono);font-size:12.5px;color:var(--muted)}
-  .hero-contacts a:hover{color:var(--c2)}
-  .hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
+    /* ===== Cards & Grids ===== */
+    .grid { display: grid; gap: 24px; }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
 
-  /* Signature: prism dispersion graphic */
-  .prism-wrap{width:100%;max-width:440px;margin:0 auto}
-  .prism text{font-family:var(--mono);font-size:10px;fill:var(--muted)}
-  .prism .beam-in{stroke:#c7ccd6;stroke-width:3;fill:none}
-  .prism .ray{stroke-width:3;fill:none;stroke-linecap:round}
-  .prism .glass{fill:rgba(124,92,255,0.08);stroke:var(--line);stroke-width:1.5}
-  .prism .label-chip{fill:#fff;stroke:var(--line)}
+    .card {
+      background: var(--card-bg); border: 1px solid var(--card-border);
+      border-radius: var(--radius-md); padding: 28px;
+      box-shadow: var(--shadow-sm); transition: var(--transition);
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: rgba(2, 132, 199, 0.3); }
 
-  /* ============ Cards / grid ============ */
-  .grid{display:grid;gap:20px}
-  .grid-3{grid-template-columns:repeat(3,1fr)}
-  .grid-2{grid-template-columns:repeat(2,1fr)}
-  .card{
-    background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:26px;
-    box-shadow:0 1px 2px rgba(16,20,31,0.03);position:relative;overflow:hidden;
-  }
-  .card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--spectrum)}
-  .card.plain::before{display:none}
+    /* About Section */
+    .about-card { background: #fff; font-size: 1.05rem; line-height: 1.8; color: #334155; max-width: 900px; margin: 0 auto; text-align: center; }
 
-  /* Skills */
-  .skill h4{font-size:15.5px;display:flex;align-items:center;gap:9px;margin-bottom:16px}
-  .skill .ico{width:30px;height:30px;border-radius:8px;background:var(--spectrum);flex:none}
-  .skill ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
-  .skill li{color:var(--ink);font-size:12.5px;padding:6px 12px;background:var(--bg);border:1px solid var(--line);border-radius:999px}
+    /* Skills Badges */
+    .skill-card h4 { display: flex; align-items: center; gap: 10px; font-size: 1.15rem; margin-bottom: 16px; color: var(--text-main); }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; }
+    .tag {
+      background: #f1f5f9; border: 1px solid #e2e8f0; color: #334155;
+      padding: 6px 14px; border-radius: 999px; font-size: 0.88rem; font-weight: 500;
+    }
 
-  /* Experience */
-  .xp-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:6px}
-  .xp-role{font-size:18px;font-family:var(--display);font-weight:700}
-  .xp-tag{font-family:var(--mono);font-size:11px;color:var(--c2);border:1px solid var(--line);padding:4px 10px;border-radius:999px}
-  .xp-company{color:var(--muted);font-weight:600;margin-bottom:16px}
-  .xp-list{margin:14px 0 0;padding-left:0;list-style:none}
-  .xp-list li{color:var(--muted);font-size:14.5px;padding:6px 0 6px 24px;position:relative}
-  .xp-list li::before{content:"";position:absolute;left:0;top:14px;width:8px;height:8px;border-radius:2px;background:var(--spectrum)}
+    /* Experience & Education Timeline */
+    .timeline { position: relative; max-width: 800px; margin: 0 auto; padding-left: 28px; border-left: 2px solid #e2e8f0; }
+    .timeline-item { position: relative; margin-bottom: 32px; }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-dot {
+      position: absolute; left: -37px; top: 4px; width: 16px; height: 16px;
+      border-radius: 50%; background: var(--primary); border: 4px solid var(--bg-light);
+    }
+    .timeline-role { font-size: 1.2rem; font-weight: 700; color: var(--text-main); }
+    .timeline-company { font-weight: 600; color: var(--primary); margin-bottom: 12px; }
+    .timeline-list { list-style-position: inside; color: var(--text-muted); margin-top: 12px; }
+    .timeline-list li { margin-bottom: 6px; }
 
-  /* Projects */
-  .proj-tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:16px}
-  .proj-tag{font-family:var(--mono);font-size:11px;color:var(--muted);border:1px solid var(--line);padding:5px 10px;border-radius:6px;background:var(--bg)}
-  .project h4{font-size:17px;margin-bottom:10px}
-  .project p{color:var(--muted);font-size:14px;margin:0}
-  .project ul{margin:14px 0 0;padding-left:18px;color:var(--muted);font-size:13.5px}
+    /* Projects Cards */
+    .project-card h4 { font-size: 1.2rem; margin-bottom: 10px; color: var(--text-main); }
+    .project-card p { color: var(--text-muted); margin-bottom: 16px; font-size: 0.95rem; }
+    .project-card strong { display: block; font-size: 0.9rem; color: var(--text-main); margin-bottom: 8px; }
 
-  /* Formation timeline */
-  .timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  .tl-item{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
-  .tl-item .yr{display:inline-block;width:34px;height:34px;border-radius:9px;background:var(--bg);border:1px solid var(--line);margin-bottom:14px}
-  .tl-item h4{font-size:15.5px}
-  .tl-item p{color:var(--muted);font-size:13.5px;margin:6px 0 0}
+    /* Pills Section (Qualités / Langues) */
+    .pill {
+      display: inline-block; background: #e0f2fe; color: #0369a1;
+      padding: 8px 18px; border-radius: 999px; margin: 4px;
+      font-size: 0.9rem; font-weight: 600;
+    }
 
-  /* Qualities as pills */
-  .pill{
-    font-size:13px;font-weight:600;color:var(--ink);border:1px solid var(--line);
-    background:#fff;padding:10px 16px;border-radius:999px;display:inline-flex;align-items:center;gap:8px;
-  }
-  .pill span.sw{width:8px;height:8px;border-radius:50%;background:var(--spectrum)}
-  .pill-row{display:flex;flex-wrap:wrap;gap:10px}
+    /* Contact Section */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 32px; align-items: start; }
+    .contact-info { display: flex; flex-direction: column; gap: 16px; }
+    .contact-item { display: flex; align-items: center; gap: 12px; font-weight: 500; }
+    .contact-icon { width: 40px; height: 40px; border-radius: 10px; background: #e0f2fe; color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
 
-  /* Languages */
-  .lang-row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0;border-top:1px solid var(--line)}
-  .lang-row:first-child{border-top:0}
-  .lang-name{font-family:var(--display);font-weight:600;font-size:15px;min-width:110px}
-  .bars{display:flex;gap:4px}
-  .bar{width:26px;height:8px;border-radius:99px;background:var(--line)}
-  .bar.on{background:var(--spectrum)}
-  .lang-level{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-left:auto}
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--text-muted); margin-bottom: 6px; }
+    .form-control {
+      width: 100%; padding: 12px 16px; border-radius: var(--radius-sm);
+      border: 1px solid var(--card-border); font-family: inherit; font-size: 0.95rem;
+      transition: var(--transition); outline: none; background: #f8fafc;
+    }
+    .form-control:focus { border-color: var(--primary); background: #fff; box-shadow: 0 0 0 4px var(--primary-glow); }
+    textarea.form-control { resize: vertical; }
 
-  /* Objectifs */
-  .obj-path{display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-size:13.5px}
-  .obj-step{border:1px solid var(--line);background:#fff;padding:10px 16px;border-radius:999px;color:var(--ink);font-weight:600}
-  .obj-step.now{background:var(--spectrum);color:#fff;border-color:transparent}
-  .obj-arrow{color:var(--muted-lt)}
+    /* Footer */
+    footer { padding: 40px 0; border-top: 1px solid var(--card-border); text-align: center; color: var(--text-muted); font-size: 0.9rem; background: #fff; }
 
-  /* Pourquoi */
-  .why p{color:var(--muted);font-size:16px;max-width:760px}
-
-  /* Contact */
-  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
-  .contact-info .row{display:flex;gap:14px;align-items:center;padding:13px 0;border-top:1px solid var(--line);font-size:14.5px}
-  .contact-info .row:first-child{border-top:0}
-  .contact-info .k{font-family:var(--mono);color:var(--muted-lt);font-size:11.5px;min-width:90px}
-  .contact-info a{font-weight:600}
-  .contact-info a:hover{color:var(--c2)}
-  .contact-box label{display:block;font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-bottom:6px}
-  .contact-box input,.contact-box textarea{
-    width:100%;padding:13px;border-radius:var(--radius-sm);border:1px solid var(--line);
-    font-size:14px;margin-bottom:14px;background:var(--bg);color:var(--ink);font-family:var(--sans);
-  }
-  .contact-box input:focus,.contact-box textarea:focus{border-color:var(--c2)}
-  .contact-box button{width:100%}
-
-  footer{padding:34px 0;text-align:center;color:var(--muted-lt);font-family:var(--mono);font-size:12px;border-top:1px solid var(--line)}
-
-  @media (prefers-reduced-motion: reduce){*{animation-duration:.001ms !important;transition-duration:.001ms !important}}
-
-  @media (max-width:960px){
-    .hero .wrap{grid-template-columns:1fr;text-align:left}
-    .prism-wrap{max-width:320px}
-    .grid-3{grid-template-columns:1fr 1fr}
-    .timeline{grid-template-columns:1fr}
-    .contact-grid{grid-template-columns:1fr}
-    nav#main-nav{display:none}
-    .nav-toggle{display:block}
-  }
-  @media (max-width:620px){
-    .hero h1{font-size:36px}
-    .grid-3,.grid-2{grid-template-columns:1fr}
-    section{padding:60px 0}
-  }
-</style>
+    /* ===== Responsive ===== */
+    @media (max-width: 980px) {
+      .grid-3, .grid-2, .contact-grid { grid-template-columns: 1fr; }
+      nav ul { display: none; }
+      .nav-toggle { display: block; }
+    }
+  </style>
 </head>
+
 <body>
+  <!-- Header / Navigation -->
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo">SY</div>
+        <span>Sadou Younoussa</span>
+      </div>
 
-<header>
-  <div class="nav">
-    <div class="brand"><span class="mark">SY</span> Sadou Younoussa</div>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" onclick="toggleNav()">☰</button>
-    <ul id="main-nav">
-      <li><a href="#accueil">Accueil</a></li>
-      <li><a href="#apropos">À propos</a></li>
-      <li><a href="#competences">Compétences</a></li>
-      <li><a href="#experience">Expérience</a></li>
-      <li><a href="#projets">Projets</a></li>
-      <li><a href="#formation">Formation</a></li>
-      <li><a href="#qualites">Qualités</a></li>
-      <li><a href="#langues">Langues</a></li>
-      <li><a href="#objectifs">Objectifs</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
-</header>
+      <nav aria-label="Navigation principale">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" onclick="toggleNav()">☰</button>
+        <ul id="main-nav">
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#apropos">À propos</a></li>
+          <li><a href="#competences">Compétences</a></li>
+          <li><a href="#experience">Expérience</a></li>
+          <li><a href="#projets">Projets</a></li>
+          <li><a href="#formation">Formation</a></li>
+          <li><a href="#qualites">Qualités</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<main>
-  <!-- HERO -->
-  <section id="accueil" class="hero">
-    <div class="wrap">
-      <div>
-        <div class="hero-status"><span class="dot"></span> Disponible pour missions</div>
-        <h1>Sadou <span class="accent">Younoussa</span></h1>
-        <div class="role">Technicien Réseaux &amp; Télécommunications</div>
-        <p class="lead">Diplômé en Réseaux et Télécommunications, je conçois, configure et dépanne des infrastructures réseau — du câblage jusqu'à la supervision des liens.</p>
+  <main>
+    <!-- HERO -->
+    <section id="accueil" class="hero visible">
+      <div class="hero-inner">
+        <div class="hero-badge">🌐 Télécommunications & Infrastructures</div>
+        <h1>Sadou Younoussa</h1>
+        <h2>Technicien Réseaux & Télécommunications</h2>
+        <p>Diplômé en Réseaux et Télécommunications, spécialisé dans l'administration, la maintenance et la sécurisation des infrastructures informatiques et réseaux.</p>
 
         <div class="hero-contacts">
-          <a href="tel:+22791265998">+227 91 26 59 98</a>
-          <a href="mailto:sadouyounoussa032@gmail.com">sadouyounoussa032@gmail.com</a>
-          <a href="https://linkedin.com/in/sadouyounoussa" target="_blank" rel="noopener noreferrer">linkedin.com/in/sadouyounoussa</a>
+          <span>📞 <a href="tel:+22791265998">+227 91 26 59 98</a> / <a href="tel:+22793782454">+227 93 78 24 54</a></span>[cite: 1]
+          <span>📧 <a href="mailto:sadouyounoussa032@gmail.com">sadouyounoussa032@gmail.com</a></span>[cite: 1]
+          <span>🔗 <a href="https://linkedin.com/in/sadouyounoussa" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
         </div>
 
         <div class="hero-ctas">
-          <a class="btn btn-spectrum" href="#contact">Me contacter</a>
+          <a class="btn btn-primary" href="#contact">Me contacter</a>
           <a class="btn btn-outline" href="#projets">Voir mes projets</a>
-          <a class="btn btn-primary" href="CV_Sadou_Younoussa.pdf" download>Télécharger le CV</a>
+          <!-- Téléchargement du CV configuré pour GitHub -->
+          <a class="btn btn-download" href="CV_Sadou_Younoussa.pdf" download="CV_Sadou_Younoussa.pdf">Télécharger mon CV</a>[cite: 1]
         </div>
       </div>
+    </section>
 
-      <div>
-        <svg class="prism-wrap prism" viewBox="0 0 420 380" role="img" aria-label="Un faisceau de lumière blanche traverse un prisme et se disperse en plusieurs rayons colorés, chacun étiqueté avec une compétence réseau">
-          <line class="beam-in" x1="10" y1="190" x2="150" y2="190"/>
-          <polygon class="glass" points="150,120 220,190 150,260"/>
-
-          <line class="ray" x1="220" y1="190" x2="400" y2="70"  stroke="var(--c1)"/>
-          <line class="ray" x1="220" y1="190" x2="400" y2="150" stroke="var(--c2)"/>
-          <line class="ray" x1="220" y1="190" x2="400" y2="230" stroke="var(--c3)"/>
-          <line class="ray" x1="220" y1="190" x2="400" y2="310" stroke="var(--c4)"/>
-
-          <g><rect class="label-chip" x="330" y="52" width="80" height="30" rx="15"/><text x="370" y="71" text-anchor="middle">TCP/IP</text></g>
-          <g><rect class="label-chip" x="330" y="132" width="80" height="30" rx="15"/><text x="370" y="151" text-anchor="middle">VLAN</text></g>
-          <g><rect class="label-chip" x="330" y="212" width="80" height="30" rx="15"/><text x="370" y="231" text-anchor="middle">WI-FI</text></g>
-          <g><rect class="label-chip" x="330" y="292" width="80" height="30" rx="15"/><text x="370" y="311" text-anchor="middle">ROUTAGE</text></g>
-
-          <circle id="photon" r="5" cx="10" cy="190" fill="var(--c2)"/>
-        </svg>
-      </div>
-    </div>
-  </section>
-
-  <!-- A PROPOS -->
-  <section id="apropos" data-reveal>
-    <div class="wrap">
-      <div class="section-title">
-        <span class="eyebrow">01 — Profil</span>
-        <h2>À propos de moi</h2>
-      </div>
-      <div class="card">
-        <p style="color:var(--muted);font-size:15.5px;max-width:820px;margin:0">
-          Je suis diplômé en Réseaux et Télécommunications, passionné par les infrastructures informatiques, les systèmes de communication et les nouvelles technologies.
-          Mon objectif est de contribuer au bon fonctionnement, à la sécurité et à la performance des réseaux informatiques.
-          Au cours de mon parcours universitaire et de mon stage professionnel, j'ai développé des compétences en installation, configuration, maintenance et dépannage des réseaux.
-          J'aime apprendre de nouvelles technologies et relever des défis techniques afin de proposer des solutions efficaces.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- COMPETENCES -->
-  <section id="competences" class="alt" data-reveal>
-    <div class="wrap">
-      <div class="section-title">
-        <span class="eyebrow">02 — Savoir-faire</span>
-        <h2>Compétences techniques</h2>
-      </div>
-      <div class="grid grid-3">
-        <div class="card skill">
-          <h4><span class="ico"></span>Réseaux</h4>
-          <ul><li>TCP/IP</li><li>IPv4</li><li>VLAN</li><li>Routage</li><li>Commutation</li><li>Wi-Fi</li></ul>
+    <!-- À PROPOS -->
+    <section id="apropos">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>À propos de moi</h2>
+          <p>Mon profil professionnel</p>
         </div>
-        <div class="card skill">
-          <h4><span class="ico"></span>Systèmes</h4>
-          <ul><li>Windows</li><li>Linux (Ubuntu)</li><li>Administration système</li></ul>
-        </div>
-        <div class="card skill">
-          <h4><span class="ico"></span>Outils</h4>
-          <ul><li>Cisco Packet Tracer</li><li>GNS3</li><li>Wireshark</li><li>Microsoft Office</li></ul>
+        <div class="card about-card">
+          <p>
+            Jeune diplômé en Réseaux et Télécommunications, motivé, rigoureux et passionné par les technologies de l'information[cite: 1].
+            Grâce à une solide formation académique et à une expérience de stage chez Niger Telecom, j'ai acquis des compétences en installation, configuration, maintenance et dépannage des infrastructures réseau[cite: 1].
+            Curieux, doté d'un bon esprit d'analyse et d'un excellent sens du travail en équipe, je souhaite mettre mes compétences au service d'une organisation afin de contribuer à la disponibilité, à la performance et à la sécurité de ses systèmes d'information[cite: 1].
+          </p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- EXPERIENCE -->
-  <section id="experience" data-reveal>
-    <div class="wrap">
-      <div class="section-title">
-        <span class="eyebrow">03 — Terrain</span>
-        <h2>Expérience professionnelle</h2>
-      </div>
-      <div class="card">
-        <div class="xp-head">
-          <div class="xp-role">Stagiaire Réseaux et Télécommunications</div>
-          <div class="xp-tag">Stage</div>
+    <!-- COMPÉTENCES -->
+    <section id="competences">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Compétences Techniques</h2>
+          <p>Stack technique & outils maîtrisés</p>
         </div>
-        <div class="xp-company">Niger Telecom</div>
-        <p style="color:var(--muted);font-size:14.5px;margin:0">
-          Durant mon stage, j'ai participé à l'exploitation et à la maintenance des infrastructures de télécommunications :
-        </p>
-        <ul class="xp-list">
-          <li>Maintenance des équipements réseau</li>
-          <li>Supervision des infrastructures de télécommunications</li>
-          <li>Assistance technique aux équipes d'exploitation</li>
-          <li>Diagnostic des incidents réseau</li>
-          <li>Résolution des problèmes de connectivité</li>
-          <li>Observation et application des procédures de maintenance</li>
-        </ul>
-        <p style="color:var(--muted);font-size:14.5px;margin-top:16px">
-          Cette expérience m'a permis de mieux comprendre le fonctionnement d'une infrastructure de télécommunications et de renforcer mes capacités d'analyse et de résolution de problèmes.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJETS -->
-  <section id="projets" class="alt" data-reveal>
-    <div class="wrap">
-      <div class="section-title">
-        <span class="eyebrow">04 — Réalisations</span>
-        <h2>Projets académiques</h2>
-      </div>
-      <div class="grid grid-2">
-        <div class="card project">
-          <h4>Conception de réseaux — Cisco Packet Tracer</h4>
-          <p>Conception et configuration de réseaux informatiques dans un environnement de simulation.</p>
-          <ul>
-            <li>Conception de réseaux locaux</li>
-            <li>Configuration de routeurs et commutateurs Cisco</li>
-            <li>Création de VLAN, routage statique et dynamique</li>
-            <li>Configuration DHCP et tests de connectivité</li>
-          </ul>
-          <div class="proj-tags"><span class="proj-tag">VLAN</span><span class="proj-tag">DHCP</span><span class="proj-tag">Routage</span></div>
-        </div>
-        <div class="card project">
-          <h4>Analyse réseau — Wireshark</h4>
-          <p>Utilisation de Wireshark pour observer et analyser le trafic réseau.</p>
-          <ul>
-            <li>Capture de paquets réseau</li>
-            <li>Analyse du trafic et identification des anomalies</li>
-            <li>Observation des échanges et protocoles réseau</li>
-          </ul>
-          <div class="proj-tags"><span class="proj-tag">Wireshark</span><span class="proj-tag">Diagnostic</span></div>
+        <div class="grid grid-3">
+          <div class="card skill-card">
+            <h4>🌐 Réseaux Informatiques</h4>
+            <ul class="tag-list">
+              <li class="tag">Architecture TCP/IP</li>[cite: 1]
+              <li class="tag">Adressage IPv4</li>[cite: 1]
+              <li class="tag">Réseaux d'accès</li>[cite: 1]
+            </ul>
+          </div>
+          <div class="card skill-card">
+            <h4>💻 Systèmes d'exploitation</h4>
+            <ul class="tag-list">
+              <li class="tag">Windows</li>[cite: 1]
+              <li class="tag">Linux</li>
+            </ul>
+          </div>
+          <div class="card skill-card">
+            <h4>🛠️ Outils & Logiciels</h4>
+            <ul class="tag-list">
+              <li class="tag">Cisco Packet Tracer</li>[cite: 1]
+              <li class="tag">GNS3</li>[cite: 1]
+              <li class="tag">Wireshark</li>[cite: 1]
+              <li class="tag">Microsoft Office</li>[cite: 1]
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FORMATION -->
-  <section id="formation" data-reveal>
-    <div class="wrap">
-      <div class="section-title">
-        <span class="eyebrow">05 — Parcours</span>
-        <h2>Formation</h2>
-      </div>
-      <div class="timeline">
-        <div class="tl-item"><span class="yr"></span><h4>Licence en Réseaux et Télécommunications</h4><p>Université de Dosso</p></div>
-        <div class="tl-item"><span class="yr"></span><h4>Diplôme Universitaire de Technologie — DUT</h4><p>Réseaux &amp; Télécommunications</p></div>
-        <div class="tl-item"><span class="yr"></span><h4>Baccalauréat — Série D</h4><p>Enseignement secondaire</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- QUALITES -->
-  <section id="qualites" class="alt" data-reveal>
-    <div class="wrap">
-      <div class="section-title">
-        <span class="eyebrow">06 — Savoir-être</span>
-        <h2>Qualités professionnelles</h2>
-      </div>
-      <div class="pill-row">
-        <span class="pill"><span class="sw"></span>Esprit d'équipe</span>
-        <span class="pill"><span class="sw"></span>Rigueur</span>
-        <span class="pill"><span class="sw"></span>Organisation</span>
-        <span class="pill"><span class="sw"></span>Adaptabilité</span>
-        <span class="pill"><span class="sw"></span>Curiosité</span>
-        <span class="pill"><span class="sw"></span>Esprit d'analyse</span>
-        <span class="pill"><span class="sw"></span>Sens du service</span>
-        <span class="pill"><span class="sw"></span>Résolution de problèmes</span>
-        <span class="pill"><span class="sw"></span>Apprentissage continu</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- LANGUES -->
-  <section id="langues" data-reveal>
-    <div class="wrap">
-      <div class="section-title">
-        <span class="eyebrow">07 — Communication</span>
-        <h2>Langues</h2>
-      </div>
-      <div class="card" style="max-width:560px">
-        <div class="lang-row"><span class="lang-name">Français</span><div class="bars"><span class="bar on"></span><span class="bar on"></span><span class="bar on"></span><span class="bar on"></span></div><span class="lang-level">Très bon</span></div>
-        <div class="lang-row"><span class="lang-name">Zarma</span><div class="bars"><span class="bar on"></span><span class="bar on"></span><span class="bar on"></span><span class="bar on"></span></div><span class="lang-level">Très bon</span></div>
-        <div class="lang-row"><span class="lang-name">Hausa</span><div class="bars"><span class="bar on"></span><span class="bar on"></span><span class="bar on"></span><span class="bar"></span></div><span class="lang-level">Bon</span></div>
-        <div class="lang-row"><span class="lang-name">Anglais</span><div class="bars"><span class="bar on"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span></div><span class="lang-level">Passable</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- OBJECTIFS -->
-  <section id="objectifs" class="alt" data-reveal>
-    <div class="wrap">
-      <div class="section-title">
-        <span class="eyebrow">08 — Trajectoire</span>
-        <h2>Objectifs de carrière</h2>
-      </div>
-      <div class="card">
-        <div class="obj-path">
-          <span class="obj-step now">Technicien Réseaux</span>
-          <span class="obj-arrow">→</span>
-          <span class="obj-step">Administrateur Réseaux</span>
-          <span class="obj-arrow">→</span>
-          <span class="obj-step">Technicien Support Informatique</span>
-          <span class="obj-arrow">→</span>
-          <span class="obj-step">Administrateur Systèmes</span>
-          <span class="obj-arrow">→</span>
-          <span class="obj-step">Ingénieur Réseaux</span>
+    <!-- EXPÉRIENCE -->
+    <section id="experience">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Expérience Professionnelle</h2>
+          <p>Parcours sur le terrain</p>
         </div>
-        <p style="color:var(--muted);font-size:14.5px;margin-top:22px;max-width:700px">
-          Je souhaite également développer mes compétences en cybersécurité, en administration système et en supervision des infrastructures réseau.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- POURQUOI -->
-  <section id="pourquoi" class="why" data-reveal>
-    <div class="wrap">
-      <div class="section-title">
-        <span class="eyebrow">09 — Engagement</span>
-        <h2>Pourquoi collaborer avec moi ?</h2>
-      </div>
-      <p>
-        Je considère qu'un bon professionnel des réseaux doit associer compétences techniques, rigueur, capacité d'adaptation et esprit d'apprentissage.
-        Sérieux, motivé et impliqué, je suis prêt à apprendre continuellement, à travailler en équipe et à relever de nouveaux défis techniques.
-        Mon objectif est de transformer mes connaissances théoriques en compétences pratiques et directement utiles à l'entreprise.
-      </p>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="alt" data-reveal>
-    <div class="wrap">
-      <div class="section-title">
-        <span class="eyebrow">10 — Contact</span>
-        <h2>Discutons de votre projet</h2>
-      </div>
-      <div class="contact-grid">
-        <div class="card contact-info">
-          <h3 style="font-size:18px;margin-bottom:8px">Sadou Younoussa</h3>
-          <div class="row"><span class="k">TÉL</span><a href="tel:+22791265998">+227 91 26 59 98</a></div>
-          <div class="row"><span class="k">EMAIL</span><a href="mailto:sadouyounoussa032@gmail.com">sadouyounoussa032@gmail.com</a></div>
-          <div class="row"><span class="k">LINKEDIN</span><a href="https://linkedin.com/in/sadouyounoussa" target="_blank" rel="noopener noreferrer">linkedin.com/in/sadouyounoussa</a></div>
-          <div class="row"><span class="k">LOCALISATION</span><span style="color:var(--muted)">Niger</span></div>
-          <a class="btn btn-spectrum" style="margin-top:18px" href="CV_Sadou_Younoussa.pdf" download>Télécharger le CV</a>
-        </div>
-
-        <div class="card contact-box">
-          <h3 style="font-size:17px;margin-bottom:16px">Formulaire de contact</h3>
-          <form id="contactForm" novalidate>
-            <label for="name">Nom</label>
-            <input id="name" name="name" type="text" placeholder="Votre nom" required>
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" placeholder="Votre email" required>
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Votre message" required></textarea>
-            <button class="btn btn-primary" type="submit">Envoyer le message</button>
-          </form>
-          <p id="formMessage" role="status" style="display:none;margin-top:14px;color:var(--c2);font-family:var(--mono);font-size:13px">✔ Message envoyé (simulation).</p>
-          <p id="formError" role="alert" style="display:none;margin-top:14px;color:#e5484d;font-family:var(--mono);font-size:13px"></p>
+        <div class="timeline">
+          <div class="timeline-item card">
+            <div class="timeline-dot"></div>
+            <div class="timeline-role">Stagiaire Réseaux & Télécommunications</div>[cite: 1]
+            <div class="timeline-company">Niger Télécoms (Mars 2025 – Mai 2026)</div>[cite: 1]
+            <p>Missions principales réalisées :</p>
+            <ul class="timeline-list">
+              <li>Installation et configuration d'équipements réseau[cite: 1].</li>
+              <li>Participation à la maintenance préventive et corrective des infrastructures[cite: 1].</li>
+              <li>Diagnostic et résolution des incidents techniques[cite: 1].</li>
+              <li>Simulation et configuration de réseaux avec Cisco Packet Tracer[cite: 1].</li>
+              <li>Assistance aux techniciens lors des interventions sur le terrain[cite: 1].</li>
+              <li>Participation au suivi du réseau de transmission[cite: 1].</li>
+            </ul>
+          </div>
         </div>
       </div>
+    </section>
+
+    <!-- PROJETS -->
+    <section id="projets">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Projets Académiques</h2>
+          <p>Mises en pratique techniques</p>
+        </div>
+        <div class="grid grid-2">
+          <div class="card project-card">
+            <h4>🔹 Simulation & Configuration Réseau (Packet Tracer)</h4>
+            <p>Conception, simulation et configuration d'architectures réseaux complètes dans un environnement virtuel[cite: 1].</p>
+            <strong>Tâches & Réalisations :</strong>
+            <ul class="tag-list">
+              <li class="tag">Configuration d'équipements Cisco</li>
+              <li class="tag">Adressage IPv4</li>[cite: 1]
+              <li class="tag">Tests de connectivité</li>
+            </ul>
+          </div>
+          <div class="card project-card">
+            <h4>🔹 Analyse de Trafic Réseau (Wireshark)</h4>
+            <p>Analyse des protocoles et captures de paquets pour le diagnostic des échanges réseaux[cite: 1].</p>
+            <strong>Tâches & Réalisations :</strong>
+            <ul class="tag-list">
+              <li class="tag">Capture de paquets</li>
+              <li class="tag">Analyse TCP/IP</li>[cite: 1]
+              <li class="tag">Diagnostic d'anomalies</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMATION -->
+    <section id="formation">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Formation Académique</h2>
+          <p>Diplômes et diplômes préparés</p>
+        </div>
+        <div class="grid grid-3">
+          <div class="card">
+            <h4>Licence Réseaux & Télécoms</h4>[cite: 1]
+            <p style="color:var(--primary); font-weight:600; margin-top:4px;">Université de Dosso (2023–2026)</p>[cite: 1]
+          </div>
+          <div class="card">
+            <h4>DUT Réseaux & Télécoms</h4>[cite: 1]
+            <p style="color:var(--text-muted); margin-top:4px;">Diplôme Universitaire de Technologie (2024–2025)</p>[cite: 1]
+          </div>
+          <div class="card">
+            <h4>Baccalauréat Série D</h4>[cite: 1]
+            <p style="color:var(--text-muted); margin-top:4px;">Obtenu en 2022–2023</p>[cite: 1]
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUALITÉS & LANGUES -->
+    <section id="qualites">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div class="card">
+            <h3 style="margin-bottom:16px;">🌟 Qualités Professionnelles</h3>
+            <div>
+              <span class="pill">Esprit d'équipe</span>[cite: 1]
+              <span class="pill">Rigueur</span>[cite: 1]
+              <span class="pill">Autonomie</span>[cite: 1]
+              <span class="pill">Esprit d'analyse</span>[cite: 1]
+              <span class="pill">Capacité d'adaptation</span>[cite: 1]
+              <span class="pill">Sens des responsabilités</span>[cite: 1]
+              <span class="pill">Apprentissage rapide</span>[cite: 1]
+            </div>
+          </div>
+          <div class="card">
+            <h3 style="margin-bottom:16px;">🗣️ Langues</h3>
+            <ul style="list-style:none; line-height:2;">
+              <li><strong>Français :</strong> Très bien</li>[cite: 1]
+              <li><strong>Anglais :</strong> Passable</li>[cite: 1]
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Me Contacter</h2>
+          <p>Un projet ou une opportunité ? Écrivez-moi</p>
+        </div>
+        <div class="contact-grid">
+          <div class="card contact-info">
+            <h3>Sadou Younoussa</h3>
+            <p style="color:var(--text-muted);">Disponible pour des opportunités en Réseaux, Systèmes et Télécommunications.</p>
+            <div class="contact-item">
+              <div class="contact-icon">📞</div>
+              <div>
+                <a href="tel:+22791265998">+227 91 26 59 98</a> / <a href="tel:+22793782454">+227 93 78 24 54</a>[cite: 1]
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">📧</div>
+              <a href="mailto:sadouyounoussa032@gmail.com">sadouyounoussa032@gmail.com</a>[cite: 1]
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">📍</div>
+              <span>Niger</span>
+            </div>
+            <div style="margin-top:10px;">
+              <!-- Téléchargement du CV depuis la section contact -->
+              <a class="btn btn-primary" href="CV_Sadou_Younoussa.pdf" download="CV_Sadou_Younoussa.pdf">Télécharger mon CV</a>[cite: 1]
+            </div>
+          </div>
+
+          <div class="card">
+            <form id="contactForm" novalidate>
+              <div class="form-group">
+                <label for="name">Nom complet</label>
+                <input class="form-control" id="name" name="name" type="text" placeholder="Votre nom" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Adresse e-mail</label>
+                <input class="form-control" id="email" name="email" type="email" placeholder="votre.email@exemple.com" required>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea class="form-control" id="message" name="message" rows="4" placeholder="Votre message..." required></textarea>
+              </div>
+              <button class="btn btn-primary" type="submit" style="width:100%; justify-content:center;">Envoyer le message</button>
+            </form>
+            <p id="formMessage" style="display:none; margin-top:12px; color:#16a34a; font-weight:600;">✅ Message envoyé avec succès.</p>
+            <p id="formError" style="display:none; margin-top:12px; color:#dc2626; font-weight:600;"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div>&copy; <span id="year"></span> Sadou Younoussa — Tous droits réservés</div>
     </div>
-  </section>
-</main>
+  </footer>
 
-<footer>
-  <div class="wrap">© <span id="year"></span> Sadou Younoussa — tous droits réservés</div>
-</footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  function toggleNav(){
-    const ul = document.getElementById('main-nav');
-    const btn = document.querySelector('.nav-toggle');
-    const expanded = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', String(!expanded));
-    if(!expanded){
-      ul.style.display='flex';ul.style.flexDirection='column';
-      ul.style.position='absolute';ul.style.right='24px';ul.style.top='60px';
-      ul.style.background='#fff';ul.style.border='1px solid var(--line)';
-      ul.style.borderRadius='12px';ul.style.padding='10px';ul.style.boxShadow='0 10px 30px rgba(16,20,31,0.12)';
-    } else {
-      ul.style.display='';ul.style.position='';ul.style.background='';
-    }
-  }
-
-  const sections = document.querySelectorAll('[data-reveal]');
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
-  },{threshold:0.12});
-  sections.forEach(s=>io.observe(s));
-
-  document.querySelectorAll('a[href^="#"]').forEach(a=>{
-    a.addEventListener('click', function(e){
-      const target = document.querySelector(this.getAttribute('href'));
-      if(target){
-        e.preventDefault();
-        const y = target.getBoundingClientRect().top + window.pageYOffset - 72;
-        window.scrollTo({top:y, behavior:'smooth'});
-        const ul = document.getElementById('main-nav');
-        if(window.innerWidth < 960 && ul.style.display){
-          ul.style.display='';
-          document.querySelector('.nav-toggle').setAttribute('aria-expanded','false');
-        }
+    function toggleNav() {
+      const ul = document.getElementById('main-nav');
+      const btn = document.querySelector('.nav-toggle');
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      ul.style.display = expanded ? '' : 'flex';
+      if (!expanded) {
+        ul.style.flexDirection = 'column';
+        ul.style.position = 'absolute';
+        ul.style.right = '20px';
+        ul.style.top = '64px';
+        ul.style.background = '#0f172a';
+        ul.style.padding = '16px';
+        ul.style.borderRadius = '12px';
       }
+    }
+
+    const sections = document.querySelectorAll('main section');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+    sections.forEach(s => io.observe(s));
+
+    const form = document.getElementById('contactForm');
+    const msg = document.getElementById('formMessage');
+    const err = document.getElementById('formError');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      msg.style.display = 'none';
+      err.style.display = 'none';
+
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const message = form.message.value.trim();
+
+      if (!name || !email || !message) {
+        err.textContent = 'Veuillez remplir tous les champs.';
+        err.style.display = 'block';
+        return;
+      }
+
+      msg.style.display = 'block';
+      form.reset();
     });
-  });
-
-  // Contact form (client-side simulation)
-  const form = document.getElementById('contactForm');
-  const msg = document.getElementById('formMessage');
-  const err = document.getElementById('formError');
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    msg.style.display='none'; err.style.display='none';
-    const name = form.name.value.trim();
-    const email = form.email.value.trim();
-    const message = form.message.value.trim();
-    if(!name || !email || !message){
-      err.textContent = 'Veuillez remplir tous les champs.'; err.style.display='block'; return;
-    }
-    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
-      err.textContent = 'Veuillez saisir une adresse email valide.'; err.style.display='block'; return;
-    }
-    msg.style.display='block'; form.reset();
-  });
-
-  // Signature: photon travelling through the beam then dispersing
-  (function(){
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const photon = document.getElementById('photon');
-    if(prefersReduced || !photon) return;
-    const rays = [
-      {x1:220,y1:190,x2:400,y2:70,  c:'var(--c1)'},
-      {x1:220,y1:190,x2:400,y2:150, c:'var(--c2)'},
-      {x1:220,y1:190,x2:400,y2:230, c:'var(--c3)'},
-      {x1:220,y1:190,x2:400,y2:310, c:'var(--c4)'},
-    ];
-    let phase = 0, t = 0, idx = 0;
-    function frame(){
-      t += 0.01;
-      if(phase === 0){ // travelling toward prism
-        const x = 10 + (220-10)*Math.min(t,1);
-        photon.setAttribute('cx', x); photon.setAttribute('cy', 190);
-        if(t >= 1){ phase = 1; t = 0; }
-      } else { // dispersing along a ray
-        const r = rays[idx];
-        const x = r.x1 + (r.x2-r.x1)*Math.min(t,1);
-        const y = r.y1 + (r.y2-r.y1)*Math.min(t,1);
-        photon.setAttribute('cx', x); photon.setAttribute('cy', y);
-        photon.style.fill = r.c;
-        if(t >= 1){ idx = (idx+1) % rays.length; t = 0; phase = 0; photon.setAttribute('cx',10); photon.setAttribute('cy',190); }
-      }
-      requestAnimationFrame(frame);
-    }
-    requestAnimationFrame(frame);
-  })();
-</script>
+  </script>
 </body>
 </html>
