@@ -8,15 +8,51 @@
     <meta name="keywords" content="Sadou Younoussa, Réseaux, Télécommunications, Technicien Réseaux, Niger, Portfolio">
     <meta name="author" content="Sadou Younoussa">
 
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
     <style>
-        /* Ton CSS optimisé reste similaire à ta version initiale */
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            line-height: 1.7;
-            background: #f5f7fa;
-            color: #1f2937;
-        }
-        /* ... (tout ton CSS existant) ... */
+        /* RESET */
+        * { margin:0; padding:0; box-sizing:border-box; scroll-behavior:smooth; }
+        body { font-family:'Poppins', sans-serif; background:#f9fafb; color:#1f2937; line-height:1.7; }
+        a { text-decoration:none; }
+
+        /* NAVIGATION */
+        nav { position:fixed; top:0; left:0; width:100%; background:#0f172a; z-index:1000; box-shadow:0 2px 10px rgba(0,0,0,0.15); }
+        nav .nav-container { max-width:1150px; margin:auto; display:flex; justify-content:space-between; align-items:center; padding:15px 20px; }
+        .logo { color:white; font-size:22px; font-weight:bold; }
+        nav ul { list-style:none; display:flex; gap:22px; }
+        nav a { color:white; font-size:14px; transition:0.3s; }
+        nav a:hover { color:#38bdf8; }
+
+        /* HERO */
+        .hero { min-height:100vh; background:linear-gradient(135deg,#0f172a,#1e3a8a); color:white; display:flex; align-items:center; justify-content:center; text-align:center; padding:130px 20px 70px; }
+        .hero h1 { font-size:58px; margin-bottom:10px; }
+        .hero h2 { font-size:26px; font-weight:normal; color:#38bdf8; margin-bottom:20px; }
+        .hero p { font-size:18px; max-width:720px; margin:auto; color:#e2e8f0; }
+        .buttons { margin-top:30px; }
+        .btn { display:inline-block; padding:12px 25px; margin:5px; border-radius:30px; font-weight:bold; transition:all 0.3s ease; }
+        .btn-primary { background:linear-gradient(135deg,#38bdf8,#0ea5e9); color:white; box-shadow:0 4px 12px rgba(0,0,0,0.15); }
+        .btn-primary:hover { transform:scale(1.05); }
+        .btn-secondary { border:2px solid #38bdf8; color:white; }
+        .btn-secondary:hover { background:#38bdf8; color:#0f172a; }
+
+        /* SECTIONS */
+        section { padding:80px 20px; }
+        .container { max-width:1100px; margin:auto; }
+        .section-title { text-align:center; margin-bottom:45px; }
+        .section-title h2 { font-size:32px; color:#0f172a; }
+
+        /* CONTACT */
+        .contact { background:#eef6ff; }
+        .contact-box { max-width:700px; margin:auto; background:white; padding:35px; border-radius:12px; box-shadow:0 5px 20px rgba(0,0,0,0.08); text-align:center; }
+        .contact-box h3 { font-size:25px; color:#1e3a8a; margin-bottom:20px; }
+        .contact-box form { display:flex; flex-direction:column; gap:15px; }
+        .contact-box input, .contact-box textarea { width:100%; padding:12px; border:1px solid #cbd5e1; border-radius:8px; font-family:'Poppins',sans-serif; }
+        .contact-box button { align-self:center; }
+
+        /* FOOTER */
+        footer { background:#020617; color:#cbd5e1; text-align:center; padding:25px; }
     </style>
 </head>
 
@@ -40,15 +76,12 @@
 </header>
 
 <main>
-    <!-- Hero -->
+    <!-- HERO -->
     <section class="hero" id="accueil">
         <div class="hero-content">
             <h1>Sadou Younoussa</h1>
             <h2>Technicien Réseaux & Télécommunications</h2>
             <p>Passionné par les réseaux informatiques, les télécommunications et les nouvelles technologies.</p>
-            <div class="hero-contact">
-                📞 <a href="tel:+22791265998">+227 91 26 59 98</a> | 📧 <a href="mailto:sadouyounoussa032@gmail.com">sadouyounoussa032@gmail.com</a>
-            </div>
             <div class="buttons">
                 <a href="#contact" class="btn btn-primary">Me contacter</a>
                 <a href="#projets" class="btn btn-secondary">Voir mes projets</a>
@@ -57,9 +90,18 @@
         </div>
     </section>
 
-    <!-- ... (tes sections À propos, Objectif, Compétences, Expérience, Projets, Formation, etc. restent inchangées) ... -->
+    <!-- À propos -->
+    <section id="apropos">
+        <div class="container">
+            <div class="section-title">
+                <h2>À propos de moi</h2>
+                <p>Mon profil professionnel</p>
+            </div>
+            <p>Étudiant en Licence Réseaux et Télécommunications, passionné par les infrastructures réseaux et les nouvelles technologies.</p>
+        </div>
+    </section>
 
-    <!-- Contact avec formulaire -->
+    <!-- Contact -->
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-title">
@@ -69,9 +111,9 @@
             <div class="contact-box">
                 <h3>Formulaire de contact</h3>
                 <form action="mailto:sadouyounoussa032@gmail.com" method="post" enctype="text/plain">
-                    <p><label>Nom : <input type="text" name="nom" required></label></p>
-                    <p><label>Email : <input type="email" name="email" required></label></p>
-                    <p><label>Message : <textarea name="message" rows="5" required></textarea></label></p>
+                    <input type="text" name="nom" placeholder="Votre nom" required>
+                    <input type="email" name="email" placeholder="Votre email" required>
+                    <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
                     <button type="submit" class="btn btn-primary">Envoyer</button>
                 </form>
             </div>
